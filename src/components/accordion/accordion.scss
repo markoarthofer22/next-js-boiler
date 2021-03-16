@@ -1,0 +1,113 @@
+@import '../../css/variables.scss';
+
+.accordion {
+    max-width: 920px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 4rem;
+    padding: 20px;
+    height: auto;
+    background-color: $white;
+    border-radius: 5px;
+
+    @include sm {
+        margin-top: 6rem;
+        padding: 20px 40px;
+    }
+
+    @include lg {
+        margin-top: 10rem;
+    }
+
+    &-item {
+        width: 100%;
+        padding: 25px 0;
+        background-color: transparent;
+        position: relative;
+        cursor: pointer;
+
+        @include lg {
+            padding: 35px 0;
+        }
+    }
+    &-icon {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(0);
+        fill: $light-blue;
+        width: 16px;
+        height: 16px;
+        transition: all 0.3s;
+        &-active {
+            transform: translateY(-50%) rotate(-180deg);
+        }
+    }
+
+    &-order {
+        font-size: 1.6rem;
+        color: $orange;
+        font-weight: 700;
+        margin-right: 35px;
+        font-family: $title-font;
+
+        @include lg {
+            font-size: 2.4rem;
+        }
+    }
+    &-title-value {
+        max-width: calc(100% - 80px);
+        display: block;
+    }
+
+    &-title {
+        font-size: 1.6rem;
+        color: $grey;
+        font-weight: 700;
+        font-family: $title-font;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        @include lg {
+            font-size: 2.4rem;
+        }
+    }
+
+    &-content {
+        // transition: max-height 0.3s linear, padding 0.5s linear, opacity 0.5s linear, visibility 0.5s linear;
+        transition: all 0.5s ease;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        padding-left: 65px;
+        background-color: transparent;
+
+        p {
+            font-size: 1.4rem;
+            line-height: 2.5rem;
+            color: $grey;
+            font-family: $font;
+
+            @include lg {
+                font-size: 1.7rem;
+                line-height: 3.3rem;
+            }
+        }
+
+        &-active {
+            padding: 10px;
+            padding-left: 65px;
+            visibility: visible;
+            opacity: 1;
+
+            // @include lg {
+            //     padding: 20px;
+            // }
+        }
+    }
+}
+
+.accordion-holder {
+    border-bottom: 1px solid $grey;
+}

@@ -1,0 +1,35 @@
+@import '../../css/variables.scss';
+
+.header {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    z-index: 10000;
+    width: 100%;
+    
+
+
+    @include sm {
+        top: 30px;
+    }
+
+
+    &.testTwo{
+        top: 80px;
+
+        .test{
+            font-size: 22px;
+
+            &:hover{
+                color: $dark-blue;
+            }
+        }
+    }
+
+    .test{
+        font-size: 80px;
+        font-style: italic;
+    }
+
+}
+

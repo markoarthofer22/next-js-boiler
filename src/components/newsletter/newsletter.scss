@@ -1,0 +1,199 @@
+@import '../../css/variables.scss';
+
+.newsletter {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    flex-direction: column;
+    padding: 30px 15px;
+
+    @include md {
+    }
+
+    @include lg {
+        justify-content: flex-end;
+        padding: 30px 0;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    &--content {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 3rem;
+
+        @include lg {
+            margin-bottom: 0;
+            flex-basis: 45%;
+            margin-right: 3rem;
+            text-align: left;
+        }
+
+        &--title {
+            font-size: 2.6rem;
+            color: $white;
+            font-weight: 700;
+            font-family: $title-font;
+
+            @include md {
+                font-size: 3rem;
+            }
+
+            @include lg {
+                font-size: 3.6rem;
+            }
+        }
+
+        &--subtitle {
+            font-size: 1.8rem;
+            line-height: 3rem;
+            color: $white;
+            font-family: $font;
+
+            @include md {
+                font-size: 2.2rem;
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            @include lg {
+                width: 100%;
+                margin: initial;
+                line-height: 3.6rem;
+                font-size: 2.6rem;
+            }
+        }
+    }
+
+    &--submit {
+        max-width: 200px;
+        width: 100%;
+        border-radius: 30px;
+        background-color: $light-blue;
+        font-size: 1.6rem;
+        color: $white;
+        font-weight: 700;
+        font-family: $title-font;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        height: 60px;
+        margin: 0 auto;
+        display: block;
+
+        @include md {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            background-color: rgba($black, 0.2);
+            top: 100%;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        &:hover {
+            &::before {
+                top: 0;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        svg {
+            margin-right: 2rem;
+            width: 35px;
+            height: 30px;
+            fill: $white;
+        }
+    }
+
+    &--input-holder {
+        position: relative;
+        flex-basis: 100%;
+        width: 100%;
+
+        @include md {
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        @include lg {
+            width: 100%;
+            flex-basis: 35%;
+            margin: 0 3rem 0 0;
+        }
+
+        &--input {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        input {
+            position: relative;
+
+            @include md {
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+            }
+
+            &.invalid {
+                border: 2px solid $orange;
+
+                & ~ span:before {
+                    color: $orange;
+                }
+            }
+
+            & + label {
+                transition: all 0.4s ease;
+                transform-origin: 0 0;
+            }
+
+            &:focus {
+                & + label {
+                    top: 0;
+                    left: 5px;
+                    transform: translateY(calc(-100% - 1px));
+                    color: $white;
+                }
+            }
+
+            &:valid {
+                & + label {
+                    top: 0;
+                    left: 5px;
+                    color: $white;
+                    transform: translateY(calc(-100% - 1px));
+                }
+            }
+        }
+
+        label {
+            position: absolute;
+            top: 50%;
+            left: 25px;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+            color: #1a1a1a;
+            font-weight: 400;
+            font-family: $font;
+
+            @include sm {
+                font-size: 1.6rem;
+                line-height: 2.1rem;
+            }
+        }
+    }
+}

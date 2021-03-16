@@ -1,0 +1,113 @@
+@import '../../../css/variables.scss';
+
+.description-tab {
+    margin: 5rem 0;
+    padding: 0 15px;
+    position: relative;
+    z-index: 1000;
+
+    .bg-test-left {
+        position: absolute;
+        max-width: 100%;
+        bottom: calc(0px - 10rem);
+        left: 0;
+        display: none;
+        @include lg {
+            display: block;
+        }
+    }
+
+    @include sm {
+        margin: 8rem 0;
+    }
+
+    @include lg {
+        margin: 20rem 0 10rem;
+    }
+
+    &--title {
+        font-size: 3.5rem;
+        line-height: 4rem;
+        color: $dark-blue;
+        font-weight: 700;
+        text-align: center;
+        font-family: $title-font;
+
+        @include sm {
+            font-size: 4rem;
+        }
+
+        @include lg {
+            font-size: 5.2rem;
+        }
+
+        span {
+            color: $light-blue;
+        }
+    }
+
+    &--content {
+        font-size: 1.8rem;
+        color: $dark-blue;
+        text-align: center;
+        max-width: 800px;
+        margin: 3rem auto 3rem;
+        line-height: 1.4;
+        font-family: $font;
+        font-weight: 400;
+
+        @include md {
+            margin: 2rem auto;
+            font-size: 2.5rem;
+        }
+
+        @include lg {
+            font-size: 3rem;
+            margin: 5rem auto 6rem;
+        }
+    }
+
+    &--actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include sm {
+            flex-direction: row;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            svg {
+                position: relative;
+                top: unset;
+                left: unset;
+                transform: none;
+            }
+
+            &.orange-btn {
+                box-shadow: 0px 16px 48px 0px rgba(4, 14, 53, 0.24);
+                margin-right: 0;
+                &::before {
+                    background-color: $dark-orange;
+                }
+
+                @include sm {
+                    margin-right: 4rem;
+                }
+            }
+
+            &.blue-btn {
+                box-shadow: 0px 16px 48px 0px rgba(4, 14, 53, 0.24);
+
+                &::before {
+                    background-color: $dark-blue;
+                }
+            }
+        }
+    }
+}

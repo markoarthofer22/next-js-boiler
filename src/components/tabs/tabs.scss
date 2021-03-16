@@ -1,0 +1,126 @@
+@import '../../css/variables.scss';
+
+.tabs {
+    width: 100%;
+    background-color: transparent;
+    margin-top: 6rem;
+    position: relative;
+
+    &--holder {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include rwd(520) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &--content-box {
+        position: relative;
+        width: 100%;
+        border-radius: 10px;
+        padding: 30px 40px;
+        background-color: $white;
+        min-height: 120px;
+        // max-height: 120px;
+        transition: all 0.5s ease;
+        transform: translateY(-25px);
+        border: 1px solid transparent;
+        overflow: hidden;
+        margin-top: 2rem;
+
+        @include sm {
+            margin-top: 0;
+        }
+
+        @include lg() {
+            margin-top: 0;
+            top: calc(100% - 5px);
+            position: absolute;
+        }
+    }
+
+    &--content {
+        opacity: 0;
+        visibility: hidden;
+        // height: 100%;
+        // width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 40px;
+        right: 40px;
+        transition: all 0.5s ease;
+
+        @include rwd(520) {
+            top: 30px;
+            transform: unset;
+        }
+
+        &-active {
+            // max-height: 120px;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        & > div {
+            font-size: 2.2rem;
+            color: $grey;
+            font-family: $font;
+
+            span {
+                display: inline-block;
+                font-size: inherit;
+                color: $light-blue;
+            }
+        }
+    }
+
+    &--item {
+        border-radius: 20px;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border: 1px solid $light-blue;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        flex-basis: calc(50% - 20px);
+        margin-right: 15px;
+        margin-bottom: 15px;
+
+        &:nth-of-type(n + 2) {
+            margin-right: 0;
+        }
+
+        @include rwd(520) {
+            flex-basis: unset;
+            margin: 0;
+        }
+
+        @include sm {
+            padding: 20px 30px 35px;
+        }
+
+        @include xl {
+            min-width: 140px;
+        }
+
+        &:hover {
+            border: 1px solid transparent;
+        }
+
+        &-active {
+            border: 1px solid transparent;
+            box-shadow: -17px -6px 40px 0px rgba(255, 255, 255, 0.4);
+        }
+
+        img {
+            width: 47px;
+            height: 45px;
+        }
+    }
+}

@@ -1,0 +1,3 @@
+export const SET_IS_LOADING = "SET_IS_LOADING";
+export const SET_GLOBALS = "SET_GLOBALS";
+export const SET_GLOBAL_ERROR = "SET_GLOBAL_ERROR";

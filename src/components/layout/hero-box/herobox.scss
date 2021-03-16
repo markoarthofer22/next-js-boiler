@@ -1,0 +1,115 @@
+@import '../../../css/variables.scss';
+.hero-box {
+    width: 100%;
+    background-size: cover;
+    background-position: right bottom;
+    height: 880px;
+    position: relative;
+    z-index: 1000;
+    // overflow: hidden;
+
+    &.center {
+        background-position: center center !important;
+    }
+
+    &.top {
+        background-position: center top !important;
+    }
+
+    &.bottom {
+        background-position: center bottom !important;
+    }
+
+    &.carriers-hero {
+        height: 600px;
+        position: absolute;
+        background-position: bottom;
+        @include lg {
+            height: 830px;
+        }
+    }
+    &.about-us-hero {
+        height: 650px;
+        position: absolute;
+        top: 0;
+    }
+
+    &.blog {
+        position: absolute;
+        height: 830px;
+        top: 0;
+    }
+
+    &.careers-hero {
+        position: absolute;
+        height: 950px;
+        background-position: top left;
+        top: 0;
+    }
+
+    &.landing-shippers,
+    &.landing-carriers {
+        position: absolute;
+        height: 800px;
+        top: 0;
+    }
+
+    &.shippers {
+        height: 600px;
+        position: absolute;
+        top: 0;
+
+        @include md {
+            height: 800px;
+        }
+    }
+
+    &.hero-index {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background-position: top left;
+    }
+
+    &--helper-img {
+        position: absolute;
+        background-size: contain;
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        height: 350px;
+        right: -310px;
+        top: 50px;
+        width: 500px;
+
+        @include sm {
+            right: -450px;
+            height: 500px;
+            top: 150px;
+            width: 700px;
+        }
+
+        @include lg {
+            top: unset;
+            width: 814px;
+            height: 555px;
+            right: -338px;
+            bottom: 120px;
+        }
+
+        @include xl {
+            top: unset;
+            width: 1014px;
+            height: 685px;
+            right: -300px;
+            bottom: -129px;
+        }
+
+        @include rwd(1714) {
+            top: unset;
+            width: 1014px;
+            height: 785px;
+            right: 12px;
+            bottom: -129px;
+        }
+    }
+}

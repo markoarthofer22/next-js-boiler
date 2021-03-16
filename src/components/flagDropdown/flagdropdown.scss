@@ -1,0 +1,146 @@
+@import '../../css/variables.scss';
+
+.flagdrop {
+    position: absolute;
+    right: 40px;
+
+    &.desktop {
+        right: initial;
+        position: relative;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            height: 16px;
+            border-radius: 4px;
+            width: 2px;
+            background-color: $white;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &-list {
+            top: 45px;
+        }
+    }
+
+    @include sm {
+        display: flex;
+    }
+
+    &-active {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+        min-width: 60px;
+        cursor: pointer;
+
+        svg {
+            position: relative;
+            transition: all 0.5s;
+            width: 18px;
+            height: 18px;
+            fill: $white;
+            margin-left: -0.6rem;
+        }
+
+        &.open {
+            svg {
+                transform: rotateZ(-180deg);
+            }
+        }
+
+        @include sm {
+        }
+        span {
+            margin-right: 1rem;
+            color: $white;
+            font-size: 1.4rem;
+            font-family: $title-font;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+
+    &-list {
+        background-color: rgba($dark-blue, 0.86);
+        position: absolute;
+        z-index: 1000;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-20px);
+        list-style: none;
+        margin: 0;
+        border-radius: 5px;
+        //closed
+        padding: 5px 8px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
+
+        &::before {
+            content: ' ';
+            position: absolute;
+            background-color: inherit;
+            width: 29px;
+            height: 8px;
+            transform: translateX(-50%);
+
+            clip-path: polygon(50% 0, 50% 0, 100% 100%, 0% 100%);
+            top: -7.6px;
+            left: 50%;
+        }
+
+        & :not(:last-child) {
+            border-bottom: 1px solid rgba($orange, 0.5);
+        }
+
+        &-open {
+            visibility: visible;
+            transform: translateX(-50%) translateY(0px);
+            opacity: 1;
+        }
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &:hover {
+            & span {
+                color: $orange;
+            }
+        }
+
+        & span {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #fff;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            transition: color 0.4s;
+            padding: 8px 10px;
+            font-family: $font;
+            font-weight: 600;
+            cursor: pointer;
+
+            & img {
+                width: 22px;
+                border-radius: 5px;
+                margin-right: 5px;
+                overflow: hidden;
+                border: none !important;
+            }
+        }
+    }
+}

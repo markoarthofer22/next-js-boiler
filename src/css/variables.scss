@@ -1,0 +1,98 @@
+// All variables for project (colors, fonts, font-sizes ect.)
+
+//form elements
+
+//new colors
+$warning-red: #d71920;
+$white: #fff;
+$background: #f9fbfe;
+$black: #000;
+$light-grey: #a7b0b4;
+$lighter-grey: #e7eaed;
+$grey: #6d6e70;
+$dark-blue: #334a9c;
+$orange: #f79520;
+$dark-orange: #cd7d1d;
+$darker-blue: #1693c5;
+$light-blue: #29a9e1;
+
+// fonts
+
+// @font-face {
+//     font-family: 'Gilroy';
+//     src: url('/fonts/Gilroy-Black.ttf') format('truetype'), url('/fonts/Gilroy-Black.woff2') format('woff2'),
+//         url('/fonts/Gilroy-Black.woff') format('woff');
+//     font-weight: 900;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Gilroy';
+//     src: url('/fonts/Gilroy-Bold.ttf') format('truetype'), url('/fonts/Gilroy-Bold.woff2') format('woff2'),
+//         url('/fonts/Gilroy-Bold.woff') format('woff');
+//     font-weight: 700;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Gilroy';
+//     src: url('/fonts/Gilroy-SemiBold.ttf') format('truetype'), url('/fonts/Gilroy-SemiBold.woff2') format('woff2'),
+//         url('/fonts/Gilroy-SemiBold.woff') format('woff');
+//     font-weight: 600;
+//     font-style: normal;
+// }
+
+
+//font setup
+$h-font: 'Sans-Serif';
+$title-font: 'Sans-Serif';
+$font: 'Sans-Serif';
+$font-size-main: 10px;
+$mainColor: #000;
+
+//MEDIA QUERIES
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+// Medium devices
+@mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+// Large devices
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// Extra large devices
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+// Custom devices
+@mixin rwd($screen) {
+    @media (min-width: $screen+'px') {
+        @content;
+    }
+}

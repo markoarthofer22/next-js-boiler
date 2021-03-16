@@ -1,0 +1,64 @@
+@import '../../../css/variables.scss';
+
+.about-us {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10rem;
+
+    .bg-test-right {
+        position: absolute;
+        max-width: 100%;
+        top: -17rem;
+        right: 0;
+        display: none;
+        @include lg {
+            display: block;
+        }
+    }
+
+    .bg-test-left {
+        position: absolute;
+        max-width: 100%;
+        bottom: calc(0px - 60rem);
+        left: 0;
+        display: none;
+        @include lg {
+            display: block;
+        }
+    }
+
+    &--title {
+        font-size: 3rem;
+        color: $dark-blue;
+        font-weight: 700;
+        text-align: center;
+        font-family: $title-font;
+
+        @include sm {
+            text-align: initial;
+            font-size: 5.2rem;
+        }
+
+        span {
+            color: $light-blue;
+        }
+    }
+
+    &-swiper {
+        overflow: initial;
+
+        .swiper-pagination {
+            bottom: -70px;
+
+            @include sm {
+                bottom: -70px;
+            }
+        }
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: $orange;
+        }
+    }
+}
